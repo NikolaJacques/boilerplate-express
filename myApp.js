@@ -7,9 +7,9 @@ app.get('/', (req,res) => {
     res.send('Hello Express');
 }); */
 
-const staticPath = __dirname + '/public';
+const assetsDir = __dirname + '/public';
 
-app.use(express.static(staticPath));
+app.use(assetsDir, express.static('public'));
 
 const absolutePath = __dirname + '/views/index.html';
 
