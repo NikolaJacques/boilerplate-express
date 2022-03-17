@@ -9,7 +9,7 @@ app.get('/', (req,res) => {
 
 const staticPath = __dirname + '/public';
 
-app.use(staticPath, express.static(staticPath));
+app.use(express.static(staticPath));
 
 const absolutePath = __dirname + '/views/index.html';
 
