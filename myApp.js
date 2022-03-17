@@ -10,7 +10,7 @@ app.get('/', (req,res) => {
 <<<<<<< HEAD
 const staticPath = __dirname + '/public';
 
-app.use(() => express.static(staticPath));
+app.use(express.static(staticPath));
 
 =======
 >>>>>>> parent of 74685e9 (changed code order)
