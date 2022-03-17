@@ -7,11 +7,11 @@ app.get('/', (req,res) => {
     res.send('Hello Express');
 }); */
 
-const staticPath = __dirname + '/public';
+const staticPath = __dirname + 'public';
 
 app.use(express.static(staticPath));
 
-const absolutePath = __dirname + '/views/index.html';
+const absolutePath = __dirname + 'views/index.html';
 
 app.get('/', (req,res) => {
     res.sendFile(absolutePath);
