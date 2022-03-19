@@ -1,5 +1,5 @@
 const express = require('express'); 
-const dotenv = require('dotenv');
+require('dotenv').config();
 const app = express();
 
 /* console.log('Hello World');
@@ -14,7 +14,7 @@ app.use('/public',express.static(assetsDir)); */
 
 app.get('/json', (req, res) => {
     res.json({
-        message: dotenv.env.MESSAGE_STYLE==='uppercase'?('Hello json').toUpperCase():'Hello json'
+        message: process.env.MESSAGE_STYLE==='uppercase'?('Hello json').toUpperCase():'Hello json'
     });
 });
 
