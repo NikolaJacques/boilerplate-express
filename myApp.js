@@ -28,6 +28,10 @@ app.get('/now',
     res.json({time: req.time});
 });
 
+app.get('/:word/echo', (req, res) => {
+    res.json({echo:req.params.word});
+});
+
 const assetsDir = __dirname + '/public';
 
 app.use('/public',express.static(assetsDir));
