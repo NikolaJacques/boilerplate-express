@@ -8,10 +8,6 @@ app.get('/', (req,res) => {
     res.send('Hello Express');
 }); */
 
-/* const assetsDir = __dirname + '/public';
-
-app.use('/public',express.static(assetsDir)); */
-
 const string = process.env.MESSAGE_STYLE==='uppercase'?'Hello json'.toUpperCase():'Hello json';
 console.log(string);
 console.log(typeof string);
@@ -21,6 +17,10 @@ app.get('/json', (req, res) => {
         message: string
     });
 });
+
+const assetsDir = __dirname + '/public';
+
+app.use('/public',express.static(assetsDir));
 
 const absolutePath = __dirname + '/views/index.html';
 
