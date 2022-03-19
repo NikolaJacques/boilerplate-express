@@ -8,6 +8,11 @@ app.get('/', (req,res) => {
     res.send('Hello Express');
 }); */
 
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.path} - ${req.ip}`);
+    next();
+});
+
 app.get('/json', (req, res) => {
     res.json({
         message: process.env.MESSAGE_STYLE==='uppercase'?'Hello json'.toUpperCase():'Hello json'
