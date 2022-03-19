@@ -8,10 +8,8 @@ app.get('/', (req,res) => {
     res.send('Hello Express');
 }); */
 
-const string = process.env.MESSAGE_STYLE==='uppercase'?'Hello json'.toUpperCase():'Hello json';
-console.log(JSON.stringify({message:string}));
-
 app.get('/json', (req, res) => {
+    const string = process.env.MESSAGE_STYLE==='uppercase'?'Hello json'.toUpperCase():'Hello json';
     res.json({
         message: string
     });
