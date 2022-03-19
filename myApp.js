@@ -12,11 +12,11 @@ app.get('/', (req,res) => {
 
 app.use('/public',express.static(assetsDir)); */
 
-console.log(process.env.MESSAGE_STYLE==='uppercase');
+const string = process.env.MESSAGE_STYLE==='uppercase'?('Hello json').toUpperCase():'Hello json';
 
 app.get('/json', (req, res) => {
     res.json({
-        message: process.env.MESSAGE_STYLE==='uppercase'?('Hello json').toUpperCase():'Hello json'
+        message: string
     });
 });
 
