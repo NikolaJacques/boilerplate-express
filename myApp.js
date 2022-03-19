@@ -13,6 +13,8 @@ app.get('/', (req,res) => {
 app.use('/public',express.static(assetsDir)); */
 
 const string = process.env.MESSAGE_STYLE==='uppercase'?'Hello json'.toUpperCase():'Hello json';
+console.log(string);
+console.log(typeof string);
 
 app.get('/json', (req, res) => {
     res.json({
@@ -20,9 +22,7 @@ app.get('/json', (req, res) => {
     });
 });
 
-/* const absolutePath = __dirname + '/views/index.html'; */
-
-const absolutePath = __dirname + '/json';
+const absolutePath = __dirname + '/views/index.html';
 
 app.get('/', (req,res) => {
     res.sendFile(absolutePath);
