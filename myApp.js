@@ -13,10 +13,10 @@ app.use(
 (req, res, next) => {
     console.log(`${req.method} ${req.path} - ${req.ip}`);
     next();
-},
-(req, res, next) => {
-    bodyParser.urlencoded({extended: false});
 });
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/json', (req, res) => {
     res.json({
