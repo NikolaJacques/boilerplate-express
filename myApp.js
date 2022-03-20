@@ -15,8 +15,10 @@ app.use(
     next();
 },
 (req, res, next) => {
-    const parserMiddleware = bodyParser.urlencoded({extended: false});
-    parserMiddleware();
+    if (req.method === 'POST'){
+        const parserMiddleware = bodyParser.urlencoded({extended: false});
+        parserMiddleware(req);
+    }
     next();
 });
 
