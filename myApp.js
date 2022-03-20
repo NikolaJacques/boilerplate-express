@@ -9,8 +9,15 @@ app.get('/', (req,res) => {
     res.send('Hello Express');
 }); */
 
-app.use((req, res, next) => {
+const parserMiddleware = bodyParser.urlencoded({extended: false});
+
+app.use(
+(req, res, next) => {
     console.log(`${req.method} ${req.path} - ${req.ip}`);
+    next();
+},
+(req, res, next) => {
+    parserMiddleware();
     next();
 });
 
