@@ -16,7 +16,6 @@ app.use(
 },
 (req, res, next) => {
     bodyParser.urlencoded({extended: false});
-    next();
 });
 
 app.get('/json', (req, res) => {
